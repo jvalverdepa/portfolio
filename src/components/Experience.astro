@@ -1,0 +1,117 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+import AWSIcon from "./icons/AWS.astro";
+import BriefcaseIcon from "./icons/Briefcase.astro";
+import GraphQLIcon from "./icons/GraphQL.astro";
+import NextJSIcon from "./icons/NextJS.astro";
+import ReactIcon from "./icons/React.astro";
+import ReactQueryIcon from "./icons/ReactQuery.astro";
+import ReduxIcon from "./icons/Redux.astro";
+import TailwindIcon from "./icons/Tailwind.astro";
+import TypeScriptIcon from "./icons/TypeScript.astro";
+
+const TAGS = {
+  AWS: {
+    name: "Amazon Web Services",
+    class: "border border-[#FF9900] border-opacity-60 bg-black",
+    icon: AWSIcon,
+  },
+  NEXT: {
+    name: "Next.js",
+    class: "bg-black text-white",
+    icon: NextJSIcon,
+  },
+  REACT: {
+    name: "ReactJS",
+    class: "border border-[#00D8FF] border-opacity-20 text-white",
+    icon: ReactIcon,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "border border-[#003159] text-white",
+    icon: TailwindIcon,
+  },
+  TYPESCRIPT: {
+    name: "TypeScript",
+    class: "border border-[#3178C6] border-opacity-40 text-white",
+    icon: TypeScriptIcon,
+  },
+  GRAPHQL: {
+    name: "GraphQL",
+    class: "border border-[#E10098] text-white",
+    icon: GraphQLIcon,
+  },
+  REACT_QUERY: {
+    name: "React Query",
+    class: "border border-[#FF4154] border-opacity-40 text-white",
+    icon: ReactQueryIcon,
+  },
+  REDUX: {
+    name: "Redux",
+    class: "border border-[#764ABC] border-opacity-60 text-white",
+    icon: ReduxIcon,
+  },
+};
+const EXPERIENCIE = [
+  {
+    date: "Present...",
+    title: "Freelancer",
+    description:
+      "Working on a Point of Sale system for a local retail store. The system integrates with a payment gateway to process credit card payments and with Shopify to manage a separate online store.",
+    tags: [TAGS.NEXT, TAGS.TYPESCRIPT, TAGS.TAILWIND],
+  },
+  {
+    date: "Dec 2021 - Sep 2023",
+    title: "SSr Adv Frontend Engineer - Globant",
+    description:
+      "Led a small team of frontend developers. Designed, developed and deployed an internal tool for a leading US hospitality company, providing indoor mapping and space management tools using React, AWS Location Services, PostgreSQL and AWS Amplify.",
+    // "Designed, developed and deployed an internal tool for a leading US hospitality company that allows the user to indoor map a building and create a route to a destination. The tool was built using React, AWS Location Services, PostgreSQL and AWS Amplify."
+    tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.REACT_QUERY, TAGS.AWS],
+  },
+  {
+    date: "Jun 2021 - Dec 2021",
+    title: "SSr Frontend Engineer - Globant",
+    description:
+      "Worked with other developers to migrate a legacy system from a monolithic to a microservices architecture for a major US media company. I also was in charge of the migration of a component library used by other 7 teams, reducing tech debt in 20% and improving the developer experience.",
+    tags: [TAGS.REACT, TAGS.REDUX],
+  },
+  {
+    date: "Nov 2020 - Jun 2021",
+    title: "SSr Frontend Engineer - NTT Data",
+    description:
+      "Worked with a small team of developers to build a web application for an energy company in Spain.",
+    tags: [TAGS.REACT, TAGS.REDUX],
+  },
+  {
+    date: "Nov 2019 - Dec 2019",
+    title: "Cloud Developer Jr. II - Blazar Labs SAC (Startup)",
+    description:
+      "Worked with a small team of developers to build web and desktop applications for a local book chain store. I was in charge of the frontend development of the web application using ReactJS and the backend development using NestJS.",
+    tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.REACT_QUERY],
+  },
+];
+---
+
+<section id="experience">
+  <h2 class="flex text-3xl font-semibold gap-x-3 items-center tracking-wide">
+    <BriefcaseIcon class="size-7" />
+    Experience
+  </h2>
+  <ol class="relative border-s border-gray-200 ml-3">
+    {
+      EXPERIENCIE.map((experiencie) => (
+        <li class="mb-10 ms-4">
+          <ExperienceItem {...experiencie} />
+        </li>
+      ))
+    }
+  </ol>
+
+  <!-- <div class="">
+    I'm Javier Valverde, a Software Developer with 5 years of hands-on
+    experience in designing, developing and deploying software applications who
+    have worked with local and international cross-functional teams using agile
+    methodologies. Passionate about the latest industry trends and cloud
+    computing.
+  </div> -->
+</section>
